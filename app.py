@@ -8,6 +8,8 @@ import numpy as np
 import pandas as pd
 import streamlit as st
 import matplotlib.pyplot as plt
+import streamlit as st
+
 
 from sklearn.model_selection import train_test_split
 from sklearn.compose import ColumnTransformer
@@ -26,6 +28,26 @@ from sklearn.metrics import (
 )
 
 warnings.filterwarnings("ignore")
+
+# 1. Look for this line near the top of your file:
+st.set_page_config(
+    page_title="Stock Risk Intelligence",
+    layout="wide"
+)
+
+# 2. PASTE THIS SNIPPET DIRECTLY BELOW IT:
+st.markdown("""
+    <style>
+        /* Hide the header and colored top line */
+        header[data-testid="stHeader"] {
+            display: none !important;
+        }
+        /* Adjust top padding so title has breathing room */
+        .block-container {
+            padding-top: 2rem !important;
+        }
+    </style>
+""", unsafe_allow_html=True)
 
 # ============================================================
 # 1. PAGE CONFIGURATION
